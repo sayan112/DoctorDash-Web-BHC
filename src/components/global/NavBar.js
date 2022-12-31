@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import { Link } from "react-router-dom";
-import { tokens } from "../../theme";
-import { Box, useTheme, Typography } from "@mui/material";
-import { SidebarData } from "../../data/NavbarData";
-import "./Navbar.css";
-import { IconContext } from "react-icons";
+import React, { useState } from 'react';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { Link } from 'react-router-dom';
+import { tokens } from '../../utils/theme';
+import { Box, useTheme, Typography } from '@mui/material';
+import { SidebarData } from '../../data/NavbarData';
+import '../../css/navbar.css';
+import { IconContext } from 'react-icons';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -18,14 +18,14 @@ function Navbar() {
   };
   return (
     <Box backgroundColor={colors.primary[400]}>
-      <IconContext.Provider value={{ color: "primary" }}>
+      <IconContext.Provider value={{ color: 'primary' }}>
         <Box className="navbar" backgroundColor={colors.primary[400]}>
           <Link to="#" className="menu-bars">
             <MenuIcon onClick={showSidebar} />
           </Link>
         </Box>
         <Box
-          className={sidebar ? "nav-menu active" : "nav-menu"}
+          className={sidebar ? 'nav-menu active' : 'nav-menu'}
           backgroundColor={colors.primary[400]}
         >
           <ul className="nav-menu-items" onClick={showSidebar}>

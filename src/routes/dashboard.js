@@ -1,15 +1,16 @@
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../theme";
-import { mockRAppointments } from "../../data/MockData";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import AccessibleIcon from "@mui/icons-material/Accessible";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import EventIcon from "@mui/icons-material/Event";
-import HouseIcon from "@mui/icons-material/House";
-import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
-import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
+import { Box, Button, IconButton, Typography, useTheme } from '@mui/material';
+import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined';
+import AccessibleIcon from '@mui/icons-material/Accessible';
+import EventIcon from '@mui/icons-material/Event';
+import HouseIcon from '@mui/icons-material/House';
+
+import { tokens } from '../utils/theme';
+import { mockRAppointments } from '../data/mockData';
+
+import Header from '../components/global/Header';
+import LineChart from '../components/dashboard/LineChart';
+import StatBox from '../components/dashboard/StatBox';
+import ProgressCircle from '../components/dashboard/ProgressCircle';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -26,12 +27,12 @@ const Dashboard = () => {
             sx={{
               backgroundColor: colors.blueAccent[700],
               color: colors.grey[100],
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
+              fontSize: '14px',
+              fontWeight: 'bold',
+              padding: '10px 20px',
             }}
           >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+            <DownloadOutlinedIcon sx={{ mr: '10px' }} />
             Download Reports
           </Button>
         </Box>
@@ -59,7 +60,7 @@ const Dashboard = () => {
             increase="+14%"
             icon={
               <AccessibleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[600], fontSize: '26px' }}
               />
             }
           />
@@ -78,7 +79,7 @@ const Dashboard = () => {
             increase="+21%"
             icon={
               <EventIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[600], fontSize: '26px' }}
               />
             }
           />
@@ -97,7 +98,7 @@ const Dashboard = () => {
             increase="+43%"
             icon={
               <HouseIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[600], fontSize: '26px' }}
               />
             }
           />
@@ -135,7 +136,7 @@ const Dashboard = () => {
             <Box>
               <IconButton>
                 <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
+                  sx={{ fontSize: '26px', color: colors.greenAccent[500] }}
                 />
               </IconButton>
             </Box>
@@ -215,7 +216,7 @@ const Dashboard = () => {
             <Typography
               variant="h5"
               color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
+              sx={{ mt: '15px' }}
             >
               4,352
             </Typography>

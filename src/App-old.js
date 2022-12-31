@@ -1,18 +1,18 @@
-import { ColorModeContext, useMode } from "./theme";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { Routes, Route } from "react-router-dom";
-import Topbar from "./scenes/global/Topbar";
-import Navbar from "./scenes/global/Navbar";
+import { ColorModeContext, useMode } from './theme';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { Routes, Route } from 'react-router-dom';
+import Topbar from './scenes/global/Topbar';
+import Navbar from './scenes/global/Navbar';
 // import Sidebar from "./scenes/global/Sidebar";
-import Dashboard from "./scenes/dashboard/Dashboard";
-import Appointment from "./scenes/appoint/Appoint";
-import Contacts from "./scenes/patients/Patients";
-import MeetingInfo from "./scenes/infomeeting/InfoMeeting";
-import ProfileUpdate from "./scenes/updateprofile/UpdateProfile";
-import Line from "./scenes/line/Line";
-import Calendar from "./scenes/calendar/Calender";
+import Dashboard from './scenes/dashboard/Dashboard';
+import Appointment from './scenes/appoint/Appoint';
+import Contacts from './scenes/patients/Patients';
+import MeetingInfo from './scenes/infomeeting/InfoMeeting';
+import ProfileUpdate from './scenes/updateprofile/UpdateProfile';
+import Line from './scenes/line/Line';
+import Calendar from './scenes/calendar/Calender';
 // import Meeting from "./scenes/meeting/Meeting";
-import Home from "./scenes/appointment/Home"
+import Home from './scenes/appointment/Home';
 function App() {
   const [theme, colorMode] = useMode();
   return (
