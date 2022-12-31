@@ -6,7 +6,7 @@ import height from "../../assets/height.svg"
 import temperature from "../../assets/temperature.svg"
 import glucometer from "../../assets/glucometer.svg"
 import spo2 from "../../assets/spo2.png"
-import Ecg from "../../components/Ecg"
+import Ecg from "../Ecg"
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import WomanOutlinedIcon from '@mui/icons-material/WomanOutlined';

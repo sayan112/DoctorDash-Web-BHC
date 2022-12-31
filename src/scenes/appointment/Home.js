@@ -4,7 +4,7 @@ import Chat from "../../components/Chat"
 // logo - images
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
-import ScreenShareOutlinedIcon from '@mui/icons-material/ScreenShareOutlined';
+// import ScreenShareOutlinedIcon from '@mui/icons-material/ScreenShareOutlined';
 import MarkUnreadChatAltOutlinedIcon from '@mui/icons-material/MarkUnreadChatAltOutlined';
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import prescription from "../../assets/prescription.svg"
@@ -28,21 +28,21 @@ import AssignmentIcon from "@material-ui/icons/Assignment"
 import PhoneIcon from "@material-ui/icons/Phone"
 import { CopyToClipboard } from "react-copy-to-clipboard"
 import '../../css/meeting.css';
-import { Box, Typography, useTheme } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
+// import { useTheme } from "@mui/material";
+// import { DataGrid } from "@mui/x-data-grid";
+// import { tokens } from "../../theme";
 import Peer from "simple-peer"
 import io from "socket.io-client"
-import VideocamIcon from '@mui/icons-material/Videocam';
-import MicIcon from '@mui/icons-material/Mic';
-import Prescription from '../prescription/prescription';
+// import VideocamIcon from '@mui/icons-material/Videocam';
+// import MicIcon from '@mui/icons-material/Mic';
+// import Prescription from '../prescription/prescription';
 import MedPres from '../../components/MedPres';
 import CommentSec from '../../components/CommentSec';
 const socket = io.connect('http://localhost:5000')
 const Home = () => {
   //video-call-logic
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  // const theme = useTheme();
+  // const colors = tokens(theme.palette.mode);
   const [ me, setMe ] = useState("")
   const [ stream, setStream ] = useState()
   const [ receivingCall, setReceivingCall ] = useState(false)

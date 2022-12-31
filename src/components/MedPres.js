@@ -1,9 +1,9 @@
 import React from 'react'
-import Prescription from '../scenes/prescription/prescription'
+import Prescription from '../scenes/prescription/Prescription'
 import '../scenes/prescription/prescription.css'
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
-import Stack from '@mui/material/Stack';
+// import Stack from '@mui/material/Stack';
 const MedPres = () => {
   return (
     <>
