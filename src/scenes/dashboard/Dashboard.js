@@ -1,6 +1,6 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
-import { mockRAppointments } from "../../data/mockData";
+import { mockRAppointments } from "../../data/MockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import AccessibleIcon from "@mui/icons-material/Accessible";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";

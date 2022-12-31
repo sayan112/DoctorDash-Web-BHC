@@ -1,6 +1,6 @@
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
-import {dataJson} from "../data/ecg"
+import {dataJson} from "../data/EcgData"
 const Ecg = () => {
     const data = [
         {

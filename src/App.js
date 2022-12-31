@@ -4,14 +4,14 @@ import { Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Navbar from "./scenes/global/Navbar";
 // import Sidebar from "./scenes/global/Sidebar";
-import Dashboard from "./scenes/dashboard";
-import Appointment from "./scenes/appoint";
-import Contacts from "./scenes/patients";
-import MeetingInfo from "./scenes/infomeeting";
-import ProfileUpdate from "./scenes/updateprofile";
-import Line from "./scenes/line";
-import Calendar from "./scenes/calendar";
-import Meeting from "./scenes/meeting";
+import Dashboard from "./scenes/dashboard/Dashboard";
+import Appointment from "./scenes/appoint/Appoint";
+import Contacts from "./scenes/patients/Patients";
+import MeetingInfo from "./scenes/infomeeting/InfoMeeting";
+import ProfileUpdate from "./scenes/updateprofile/UpdateProfile";
+import Line from "./scenes/line/Line";
+import Calendar from "./scenes/calendar/Calender";
+// import Meeting from "./scenes/meeting/Meeting";
 import Home from "./scenes/appointment/Home"
 function App() {
   const [theme, colorMode] = useMode();

@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataInfos } from "../../data/mockData";
+import { mockDataInfos } from "../../data/MockData";
 import Header from "../../components/Header";
 
 const Invoices = () => {
