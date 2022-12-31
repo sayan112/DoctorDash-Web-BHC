@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import TopBar from '../components/global/TopBar';
 import Navbar from '../components/global/NavBar';
 import Dashboard from './dashboard';
+import AppointmentsList from './appointmentsList';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -19,6 +20,7 @@ function App() {
             <TopBar />
             <Routes>
               <Route path="/" exact element={<Dashboard />} />
+              <Route path="/appointments" element={<AppointmentsList />} />
             </Routes>
           </main>
         </div>

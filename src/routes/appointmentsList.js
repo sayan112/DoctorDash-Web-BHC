@@ -1,13 +1,15 @@
 import { Box, Typography, useTheme } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
-import { tokens } from '../../theme';
-import { mockDataAppoint } from '../../data/MockData';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import PendingActionsIcon from '@mui/icons-material/PendingActions';
 import DoNotDisturbAltIcon from '@mui/icons-material/DoNotDisturbAlt';
-import Header from '../../components/Header';
 
-const Team = () => {
+import { tokens } from '../utils/theme';
+import { mockDataAppoint } from '../data/mockData';
+
+import Header from '../components/global/Header';
+
+const AppointmentsList = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
@@ -109,4 +111,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default AppointmentsList;
