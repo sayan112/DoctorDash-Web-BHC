@@ -1,12 +1,13 @@
 import { Box, Button, TextField } from '@mui/material';
-import { Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import * as yup from 'yup';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import InputAdornment from '@mui/material/InputAdornment';
-import Header from '../../components/Header';
 
-const Form = () => {
+import Header from '../components/global/Header';
+
+const Profile = () => {
   const isNonMobile = useMediaQuery('(min-width:600px)');
 
   const handleFormSubmit = (values) => {
@@ -308,4 +309,4 @@ const initialValues = {
   consultationFee: '',
 };
 
-export default Form;
+export default Profile;

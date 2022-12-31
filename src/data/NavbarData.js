@@ -28,15 +28,15 @@ export const SidebarData = [
     icon: <ContactsOutlinedIcon />,
     cName: 'nav-text',
   },
+  // {
+  //   title: 'Appointments Done',
+  //   path: '/infomet',
+  //   icon: <ReceiptOutlinedIcon />,
+  //   cName: 'nav-text',
+  // },
   {
-    title: 'Appointments Done',
-    path: '/infomet',
-    icon: <ReceiptOutlinedIcon />,
-    cName: 'nav-text',
-  },
-  {
-    title: 'Profile Update',
-    path: '/profileupdate',
+    title: 'Profile',
+    path: '/profile',
     icon: <PersonOutlinedIcon />,
     cName: 'nav-text',
   },

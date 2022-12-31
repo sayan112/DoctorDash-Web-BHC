@@ -7,6 +7,7 @@ import Navbar from '../components/global/NavBar';
 import Dashboard from './dashboard';
 import AppointmentsList from './appointmentsList';
 import PatientList from './patientsList';
+import Profile from './profile';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -23,6 +24,7 @@ function App() {
               <Route path="/" exact element={<Dashboard />} />
               <Route path="/patients" element={<PatientList />} />
               <Route path="/appointments" element={<AppointmentsList />} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           </main>
         </div>
