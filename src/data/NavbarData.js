@@ -18,7 +18,7 @@ export const SidebarData = [
   },
   {
     title: 'Patient List',
-    path: '/patientlist',
+    path: '/patients',
     icon: <PeopleOutlinedIcon />,
     cName: 'nav-text',
   },
