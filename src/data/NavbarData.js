@@ -48,7 +48,7 @@ export const SidebarData = [
   },
   {
     title: 'Appointment Meeting',
-    path: '/joinmeeting',
+    path: '/meeting',
     icon: <AirplayIcon />,
     cName: 'nav-text',
   },

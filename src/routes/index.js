@@ -10,7 +10,7 @@ import PatientList from './patientsList';
 import Profile from './profile';
 import Login from './login';
 import Calendar from './calender';
-import meetingPage from './meetingPage';
+// import Meeting from './meeting';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -24,13 +24,13 @@ function App() {
           <main className="content">
             <TopBar />
             <Routes>
-            <Route path="/login" exact element={<Login />} />
+              <Route path="/login" exact element={<Login />} />
               <Route path="/" exact element={<Dashboard />} />
               <Route path="/patients" element={<PatientList />} />
               <Route path="/appointments" element={<AppointmentsList />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/calendar" element={<Calendar />} />
-              <Route path="/joinmeeting" element={<meetingPage />} />
+              {/* <Route path="/meeting" element={<Meeting />} /> */}
             </Routes>
           </main>
         </div>

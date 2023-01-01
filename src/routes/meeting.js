@@ -1,57 +1,58 @@
-import React, { useState, useRef, useEffect } from "react";
-import Sidebar from "../components/SideBarComp/Sidebar";
-import Chat from "../components/MeetingComp/Chat";
+import React, { useState, useRef, useEffect } from 'react';
+import Sidebar from '../components/SideBarComp/Sidebar';
+import Chat from '../components/meeting/Chat';
 // logo - images
-import MicOutlinedIcon from "@mui/icons-material/MicOutlined";
-import VideocamOutlinedIcon from "@mui/icons-material/VideocamOutlined";
+import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
+import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined';
 // import ScreenShareOutlinedIcon from '@mui/icons-material/ScreenShareOutlined';
-import MarkUnreadChatAltOutlinedIcon from "@mui/icons-material/MarkUnreadChatAltOutlined";
-import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
-import prescription from "../assets/prescription.svg";
-import report from "../assets/report.svg";
+import MarkUnreadChatAltOutlinedIcon from '@mui/icons-material/MarkUnreadChatAltOutlined';
+import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
+import prescription from '../assets/prescription.svg';
+import report from '../assets/report.svg';
 // sidebar components
-import LiveParameters from "../components/SideBarComp/LiveParameters";
-import MedicalRecords from "../components/SideBarComp/MedicalRecords";
-import PatientHistory from "../components/SideBarComp/PatientHistory";
-import Profile from "../components/SideBarComp/Profile";
-import Stethoscope from "../components/SideBarComp/Stethoscope";
-import Symptoms from "../components/SideBarComp/Symptoms";
+import LiveParameters from '../components/meeting/LiveParameters';
+import MedicalRecords from '../components/meeting/MedicalRecords';
+import PatientHistory from '../components/meeting/PatientHistory';
+import Profile from '../components/meeting/Profile';
+import Stethoscope from '../components/meeting/Stethoscope';
+import Symptoms from '../components/meeting/Symptoms';
 // modals
-import Medications from "../components/MeetingComp/Medications";
-import Prescriptions from "../components/MeetingComp/Prescriptions";
-import Record from "../components/MeetingComp/Record";
+import Medications from '../components/meeting/Medications';
+import Prescriptions from '../components/meeting/Prescriptions';
+import Record from '../components/meeting/Record';
 //video-call
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import TextField from "@material-ui/core/TextField";
-import AssignmentIcon from "@material-ui/icons/Assignment";
-import PhoneIcon from "@material-ui/icons/Phone";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import "../css/meeting.css";
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import TextField from '@material-ui/core/TextField';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import PhoneIcon from '@material-ui/icons/Phone';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import '../css/meeting.css';
 // import { useTheme } from "@mui/material";
 // import { DataGrid } from "@mui/x-data-grid";
 // import { tokens } from "../../theme";
-import Peer from "simple-peer";
-import io from "socket.io-client";
+import Peer from 'simple-peer';
+import io from 'socket.io-client';
 // import VideocamIcon from '@mui/icons-material/Videocam';
 // import MicIcon from '@mui/icons-material/Mic';
 // import Prescription from '../prescription/prescription';
-import MedPres from "../components/MeetingComp/MedPres";
-import CommentSec from "../components/MeetingComp/CommentSec";
-const socket = io.connect("http://localhost:5000");
-const Home = () => {
+import MedPres from '../components/meeting/MedPres';
+import CommentSec from '../components/meeting/CommentSec';
+
+const socket = io.connect('http://localhost:5000');
+const Meeting = () => {
   //video-call-logic
   // const theme = useTheme();
   // const colors = tokens(theme.palette.mode);
-  const [me, setMe] = useState("");
+  const [me, setMe] = useState('');
   const [stream, setStream] = useState();
   const [receivingCall, setReceivingCall] = useState(false);
-  const [caller, setCaller] = useState("");
+  const [caller, setCaller] = useState('');
   const [callerSignal, setCallerSignal] = useState();
   const [callAccepted, setCallAccepted] = useState(false);
-  const [idToCall, setIdToCall] = useState("");
+  const [idToCall, setIdToCall] = useState('');
   const [callEnded, setCallEnded] = useState(false);
-  const [name, setName] = useState("");
+  const [name, setName] = useState('');
   // const [videoOn,setVideoOn]= useState(false)
   const myVideo = useRef();
   const userVideo = useRef();
@@ -64,11 +65,11 @@ const Home = () => {
         myVideo.current.srcObject = stream;
       });
 
-    socket.on("me", (id) => {
+    socket.on('me', (id) => {
       setMe(id);
     });
 
-    socket.on("callUser", (data) => {
+    socket.on('callUser', (data) => {
       setReceivingCall(true);
       setCaller(data.from);
       setName(data.name);
@@ -82,18 +83,18 @@ const Home = () => {
       trickle: false,
       stream: stream,
     });
-    peer.on("signal", (data) => {
-      socket.emit("callUser", {
+    peer.on('signal', (data) => {
+      socket.emit('callUser', {
         userToCall: id,
         signalData: data,
         from: me,
         name: name,
       });
     });
-    peer.on("stream", (stream) => {
+    peer.on('stream', (stream) => {
       userVideo.current.srcObject = stream;
     });
-    socket.on("callAccepted", (signal) => {
+    socket.on('callAccepted', (signal) => {
       setCallAccepted(true);
       peer.signal(signal);
     });
@@ -108,10 +109,10 @@ const Home = () => {
       trickle: false,
       stream: stream,
     });
-    peer.on("signal", (data) => {
-      socket.emit("answerCall", { signal: data, to: caller });
+    peer.on('signal', (data) => {
+      socket.emit('answerCall', { signal: data, to: caller });
     });
-    peer.on("stream", (stream) => {
+    peer.on('stream', (stream) => {
       userVideo.current.srcObject = stream;
     });
 
@@ -124,7 +125,7 @@ const Home = () => {
     connectionRef.current.destroy();
   };
   const toggleVideo = async () => {
-    let videoTrack = stream.getTracks().find((track) => track.kind === "video");
+    let videoTrack = stream.getTracks().find((track) => track.kind === 'video');
     if (videoTrack.enabled) {
       videoTrack.enabled = false;
     } else {
@@ -132,7 +133,7 @@ const Home = () => {
     }
   };
   const toggleAudio = async () => {
-    let audioTrack = stream.getTracks().find((track) => track.kind === "audio");
+    let audioTrack = stream.getTracks().find((track) => track.kind === 'audio');
     if (audioTrack.enabled) {
       audioTrack.enabled = false;
     } else {
@@ -173,11 +174,11 @@ const Home = () => {
   function openRecords() {
     setrecords(true);
   }
-  const [sidebarComp, setsidebarComp] = useState("Profile");
+  const [sidebarComp, setsidebarComp] = useState('Profile');
   const showSideComp = () => {
-    if (sidebarComp === "Live Parameter") {
+    if (sidebarComp === 'Live Parameter') {
       return <LiveParameters />;
-    } else if (sidebarComp === "Medical Records") {
+    } else if (sidebarComp === 'Medical Records') {
       return (
         <MedicalRecords
           records={records}
@@ -186,16 +187,16 @@ const Home = () => {
           openRecords={openRecords}
         />
       );
-    } else if (sidebarComp === "Patient History") {
+    } else if (sidebarComp === 'Patient History') {
       return <PatientHistory />;
-    } else if (sidebarComp === "Symptoms") {
+    } else if (sidebarComp === 'Symptoms') {
       return <Symptoms />;
-    } else if (sidebarComp === "Stethoscope") {
+    } else if (sidebarComp === 'Stethoscope') {
       return <Stethoscope />;
     } else {
-      if (sidebarComp === "Prescription") {
+      if (sidebarComp === 'Prescription') {
         return <MedPres />;
-      } else if (sidebarComp === "CommentSec") {
+      } else if (sidebarComp === 'CommentSec') {
         return <CommentSec />;
       }
       return <Profile />;
@@ -204,7 +205,7 @@ const Home = () => {
 
   useEffect(() => {
     window.onbeforeunload = function (event) {
-      setsidebarComp("Profile");
+      setsidebarComp('Profile');
     };
   }, []);
   return (
@@ -251,13 +252,13 @@ const Home = () => {
               <>
                 <div
                   className="shadow-xl bg-white rounded-full p-2 group hover:cursor-pointer hover:text-blue-700"
-                  onClick={() => setsidebarComp("Prescription")}
+                  onClick={() => setsidebarComp('Prescription')}
                 >
                   <img src={prescription} alt="" className="h-9 w-9" />
                 </div>
                 <div
                   className="shadow-xl bg-white rounded-full p-2 group hover:cursor-pointer hover:text-blue-700"
-                  onClick={() => setsidebarComp("CommentSec")}
+                  onClick={() => setsidebarComp('CommentSec')}
                 >
                   <img src={report} alt="" className="h-9 w-9" />
                 </div>
@@ -282,9 +283,9 @@ const Home = () => {
               variant="filled"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              style={{ marginBottom: "0px", width: "150px" }}
+              style={{ marginBottom: '0px', width: '150px' }}
             />
-            <CopyToClipboard text={me} style={{ marginBottom: "0.5rem" }}>
+            <CopyToClipboard text={me} style={{ marginBottom: '0.5rem' }}>
               <Button
                 variant="contained"
                 color="primary"
@@ -298,7 +299,7 @@ const Home = () => {
               label="ID to call"
               variant="filled"
               value={idToCall}
-              style={{ marginBottom: "0px", width: "60px" }}
+              style={{ marginBottom: '0px', width: '60px' }}
               onChange={(e) => setIdToCall(e.target.value)}
             />
             <div className="call-button">
@@ -367,4 +368,4 @@ const Home = () => {
     </div>
   );
 };
-export default Home;
+export default Meeting;
