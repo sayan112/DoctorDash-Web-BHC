@@ -12,8 +12,8 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import Header from "../../components/Header";
-import { tokens } from "../../theme";
+import Header from "../components/global/Header";
+import { tokens } from "../utils/theme";
 
 const Calendar = () => {
   const theme = useTheme();

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import Header from '../Header';
+import Header from '../global/Header';
 import { Box, Button, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import { tokens } from "../../theme";
-import { mockDataMedicalRecords } from "../../data/MockData";
+import { tokens } from "../../utils/theme";
+import { mockDataMedicalRecords } from "../../data/mockData";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
 import DoNotDisturbAltIcon from "@mui/icons-material/DoNotDisturbAlt";
 import PrintIcon from "@mui/icons-material/Print";
-import LineChart from '../LineChart';
-import Linetempchart from '../LineChartTemp';
+import LineChart from '../dashboard/LineChart';
+import Linetempchart from '../MeetingComp/LineChartTemp';
 const PatientHistory = () => {
   const [active,setActive]=useState("one");
      const theme = useTheme();

@@ -5,7 +5,7 @@ import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
 import { useNavigate } from 'react-router-dom';
 import CoronavirusOutlinedIcon from '@mui/icons-material/CoronavirusOutlined';
 
-import doct from "../assets/doct.png"
+// import doct from "../assets/doct.png"
 
 const Sidebar = ({ sidebarComp, setsidebarComp }) => {
   const navigate = useNavigate()

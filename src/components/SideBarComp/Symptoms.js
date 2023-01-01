@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
-import Loader from "../Loader"
+import Loader from "../MeetingComp/Loader"
 import ReactReadMoreReadLess from "react-read-more-read-less";
 const Symptoms = () => {
   const [symptoms, setSymptoms] = useState([])

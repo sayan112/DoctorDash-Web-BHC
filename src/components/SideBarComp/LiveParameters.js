@@ -6,7 +6,7 @@ import height from "../../assets/height.svg"
 import temperature from "../../assets/temperature.svg"
 import glucometer from "../../assets/glucometer.svg"
 import spo2 from "../../assets/spo2.png"
-import Ecg from "../Ecg"
+import Ecg from "../MeetingComp/Ecg"
 const LiveParameters = () => {
   return (
       <div className="w-[60%] h-full flex flex-col ">
